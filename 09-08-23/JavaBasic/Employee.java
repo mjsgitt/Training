@@ -11,8 +11,8 @@ public class Employee{
         this.location = Location;
     }
 
-    public void GetSalary(){
-        System.out.println(salary);
+    public void RiseSalary(){
+        this.salary =salary + (salary * 20)/100;
     }
     
 }
