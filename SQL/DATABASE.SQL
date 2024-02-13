@@ -131,3 +131,62 @@ FROM North_american_cities
 WHERE Country LIKE("United States")
 ORDER BY Population DESC
 LIMIT 2 OFFSET 2
+
+--
+
+SELECT *
+FROM movies
+INNER JOIN Boxoffice
+
+
+--
+
+SELECT *
+FROM movies
+INNER JOIN Boxoffice
+    ON Id = Movie_Id
+WHERE Domestic_sales < International_sales
+
+
+--
+
+SELECT *
+FROM movies
+INNER JOIN Boxoffice
+    ON Id = Movie_Id
+ORDER BY Rating DESC
+
+
+--
+
+SELECT DISTINCT Building FROM Employees
+
+--
+
+SELECT * FROM Buildings
+
+--
+
+SELECT DISTINCT Building_name,role
+FROM Buildings
+LEFT JOIN Employees
+    ON Building_name = Building
+
+--
+
+SELECT  DISTINCT Building ,Name, Role
+FROM employees
+LEFT JOIN Buildings
+    ON Building_name = Building
+LIMIT 2 OFFSET 13
+
+
+OR 
+
+SELECT Name,role
+FROM employees
+WHERE Building IS NULL
+
+-- 
+
+
