@@ -95,4 +95,39 @@ ORDER BY ASC // DESC
 LIMIT ROW // COLUMN OFFSETS ROW // COLUMN
 
 
+-- 
 
+SELECT Country,City,Population
+FROM North_american_cities
+WHERE Country LIKE("Canada")
+
+--
+
+SELECT Country,City,Latitude,Longitude
+FROM North_american_cities
+WHERE Country LIKE("United States")
+ORDER BY Latitude DESC
+
+-- 
+
+SELECT Country,City,Longitude
+FROM North_american_cities
+WHERE Longitude < -87.629798
+ORDER BY Longitude DESC
+
+
+--
+
+SELECT Country,Population,City
+FROM North_american_cities
+WHERE Country LIKE("Mexico")
+ORDER BY Population DESC
+LIMIT 2
+
+--
+
+SELECT Country,Population,City
+FROM North_american_cities
+WHERE Country LIKE("United States")
+ORDER BY Population DESC
+LIMIT 2 OFFSET 2
