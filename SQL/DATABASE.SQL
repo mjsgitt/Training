@@ -172,6 +172,14 @@ FROM Buildings
 LEFT JOIN Employees
     ON Building_name = Building
 
+    OR
+
+SELECT DISTINCT Building_name,Role
+FROM buildings
+LEFT JOIN Employees
+    ON buildings.Building_name = Employees.Building
+    
+
 --
 
 SELECT  DISTINCT Building ,Name, Role
@@ -183,10 +191,82 @@ LIMIT 2 OFFSET 13
 
 OR 
 
-SELECT Name,role
-FROM employees
-WHERE Building IS NULL
+SELECT DISTINCT Building_name ,Role
+FROM Buildings
+LEFT JOIN Employees
+    ON Buildings.Building_name = Employees.Building
+WHERE Role IS NULL
 
 -- 
+
+SELECT Title, (Domestic_sales + International_sales) / 1000000 AS gross_sales_millions
+FROM movies
+INNER JOIN BoxOffice
+    ON Id = Movie_Id
+
+
+--
+
+SELECT Title , ( Rating * 10 ) AS Percentage
+FROM Movies
+JOIN Boxoffice
+ON Id = Movie_id
+
+
+--
+
+SELECT Title , YEAR
+FROM Movies
+WHERE ( YEAR % 2 ) = 0
+
+--
+
+SELECT Name , MAX(Years_employed)
+FROM employees
+
+--
+
+SELECT DISTINCT Role , AVG ( Years_Employed ) AS AVG 
+FROM employees
+GROUP BY Role
+
+
+--
+
+SELECT DISTINCT Building , SUM (years_employed) as EACH
+FROM employees
+Group BY Building;
+
+--
+
+SELECT role , COUNT (*) as Employees
+FROM Employees
+WHERE role = "Artist"
+
+-- 
+
+SELECT role , COUNT (*) as Employees
+FROM Employees
+Group By role
+
+--
+SELECT Role , SUM(Years_employed) AS SUM
+FROM Employees
+WHERE Role = "Engineer"
+
+---
+
+SELECT Director ,Count (Director)
+FROM Movies
+GROUP BY Director
+
+---
+
+SELECT Director , SUM (Domestic_sales + International_sales ) AS Total
+FROM Movies
+JOIN Boxoffice
+    ON Movies.Id = Boxoffice.Movie_id
+GROUP BY Director
+ORDER BY Director ASC
 
 
