@@ -270,9 +270,3 @@ GROUP BY Director
 ORDER BY Director ASC
 
 
-
-sadsjjds'
-
-fudshkjdshkj h
-
-fdfshfdskahfsdhkhf
