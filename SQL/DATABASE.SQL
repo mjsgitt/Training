@@ -269,9 +269,5 @@ JOIN Boxoffice
 GROUP BY Director
 ORDER BY Director ASC
 
-ffrfsdx
-
-
-ytftrdtrdtr
 
 
